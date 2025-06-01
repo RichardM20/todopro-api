@@ -8,7 +8,7 @@ class BaseController {
     res: Response,
     statusCode: number,
     message: string,
-    data: any = null
+    data: unknown = null
   ) {
     if (statusCode >= 400) {
       logger.error(message);
@@ -18,7 +18,7 @@ class BaseController {
     }
   }
 
-  protected async executeAction(res: Response, action: () => Promise<any>) {
+  protected async executeAction(res: Response, action: () => Promise<unknown>) {
     try {
       await action();
     } catch (error) {
