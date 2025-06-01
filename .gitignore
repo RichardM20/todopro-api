@@ -1,8 +1,11 @@
 node_modules/
 dist/
 .env
+.env.prod
+.env.dev
 *.log
 coverage/
 build/
 .DS_Store
 *.tsbuildinfo
+package-lock.json
