@@ -2,7 +2,7 @@ import { Response } from "express";
 import ENV from "../config/env.config";
 
 export const setTokenCookie = (res: Response, token: string) => {
-  const isProd = ENV.NODE_ENV === "production";
+  const isProd = ENV.NODE_ENV === "prd";
 
   res.cookie("token", token, {
     httpOnly: true,
@@ -14,7 +14,7 @@ export const setTokenCookie = (res: Response, token: string) => {
 };
 
 export function clearTokenCookie(res: Response) {
-  const isProd = process.env.NODE_ENV === "production";
+  const isProd = process.env.NODE_ENV === "prd";
 
   res.clearCookie("token", {
     httpOnly: true,
